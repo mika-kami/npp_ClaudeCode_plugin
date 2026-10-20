@@ -1,0 +1,38 @@
+#include <windows.h>
+#include "resource.h"
+
+IDD_PROMPT DIALOGEX 0, 0, 330, 140
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Claude Code"
+FONT 9, "Segoe UI", 400, 0, 0x1
+BEGIN
+    LTEXT           "Instruction:", IDC_LABEL, 7, 7, 316, 18
+    EDITTEXT        IDC_INSTRUCTION, 7, 27, 316, 82, ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Enter = send    Ctrl+Enter = new line", IDC_STATIC, 7, 120, 180, 10
+    DEFPUSHBUTTON   "Send", IDOK, 215, 117, 50, 15
+    PUSHBUTTON      "Cancel", IDCANCEL, 273, 117, 50, 15
+END
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_DLL
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "Claude Code plugin for Notepad++"
+            VALUE "FileVersion", "1.0.0"
+            VALUE "InternalName", "ClaudeCode"
+            VALUE "OriginalFilename", "ClaudeCode.dll"
+            VALUE "ProductName", "Claude Code for Notepad++"
+            VALUE "ProductVersion", "1.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
